@@ -1,3 +1,4 @@
+// Replace your existing Footer.jsx with this updated version
 import React from 'react';
 
 const AppFooter = () => {
@@ -9,24 +10,7 @@ const AppFooter = () => {
         <footer className="retro-footer">
             <div className="footer-content">
                 <span className="font-mono-retro tracking-wider">
-                    Crafted with{" "}
-                    <button 
-                        onClick={handleGitHubClick}
-                        className="retro-heart clickable-heart"
-                        aria-label="Visit SippinWindex GitHub Profile"
-                        title="Click to visit my GitHub!"
-                    >
-                        ❤
-                    </button>
-                    {" "}by{" "}
-                    <button 
-                        onClick={handleGitHubClick}
-                        className="clickable-name"
-                        aria-label="Visit SippinWindex GitHub Profile"
-                        title="Click to visit my GitHub!"
-                    >
-                        Jandry Fernandez
-                    </button>
+                    Crafted with <span className="retro-heart">❤</span> by Jandry Fernandez
                 </span>
                 <span className="github-link-container">
                     <a
@@ -39,7 +23,6 @@ const AppFooter = () => {
                             e.preventDefault();
                             handleGitHubClick();
                         }}
-                        title="Visit my GitHub profile!"
                     >
                         <i className="fab fa-github"></i>
                     </a>
@@ -53,6 +36,6 @@ const AppFooter = () => {
     );
 };
 
-// Export as both Footer and AppFooter for compatibility
-export const Footer = AppFooter;
+// Export as both named and default for compatibility
+export { AppFooter };
 export default AppFooter;

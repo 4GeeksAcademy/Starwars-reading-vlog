@@ -18,16 +18,19 @@ export function StoreWrapper({ children }) {
             dispatch({ type: actionTypes.LOAD_DATA_START });
             try {
                 // Fetch all data in parallel
-                const [people, planets, vehicles] = await Promise.all([
+                const [people, planets, vehicles, starships, species, films] = await Promise.all([
                     getCollection("people"),
                     getCollection("planets"),
                     getCollection("vehicles"),
+                    getCollection("starships"),
+                    getCollection("species"),
+                    getCollection("films"),
                 ]);
                 
                 // Dispatch success action with the fetched data
                 dispatch({ 
                     type: actionTypes.LOAD_DATA_SUCCESS, 
-                    payload: { people, planets, vehicles } 
+                    payload: { people, planets, vehicles, starships, species, films } 
                 });
 
             } catch (error) {

@@ -12,16 +12,15 @@ export default defineConfig(({ mode }) => {
     },
     server: {
         port: 3000,
-        // --- CLEANED UP CSP ---
         headers: {
           "Content-Security-Policy": 
             "default-src 'self'; " +
             "connect-src 'self' https://www.swapi.tech; " +
             "img-src 'self' https://starwars-visualguide.com data:; " +
-            "style-src 'self' 'unsafe-inline'; " + // Allow styles from our domain and inline styles from Vite
-            "script-src 'self' 'unsafe-inline';"   // Allow scripts from our domain and inline scripts
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " + // Allow Google Fonts
+            "font-src 'self' https://fonts.gstatic.com; " + // Allow Google Font files
+            "script-src 'self' 'unsafe-inline';"
         }
-        // --- END CLEANUP ---
     }
   }
 })

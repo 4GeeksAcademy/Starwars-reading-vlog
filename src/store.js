@@ -2,6 +2,9 @@ export const initialStore = {
     people: [],
     planets: [],
     vehicles: [],
+    starships: [],
+    species: [],
+    films: [],
     favorites: [],
     loading: true, // Start in a loading state
 };
@@ -29,6 +32,9 @@ const storeReducer = (state, action) => {
                 people: action.payload.people,
                 planets: action.payload.planets,
                 vehicles: action.payload.vehicles,
+                starships: action.payload.starships,
+                species: action.payload.species,
+                films: action.payload.films,
             };
         
         case actionTypes.LOAD_DATA_FAILURE:

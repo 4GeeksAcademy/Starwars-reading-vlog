@@ -9,7 +9,7 @@ const handleResponse = async (response) => {
     return data;
 };
 
-// Fetches the main lists (people, planets, vehicles)
+// Fetches the main lists (people, planets, vehicles, starships, species, films)
 export const getCollection = async (resource) => {
     const response = await fetch(`${BASE_URL}/${resource}`);
     const data = await handleResponse(response);
